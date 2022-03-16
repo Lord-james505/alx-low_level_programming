@@ -1,1 +1,1 @@
-learning the act of debugging
+The journey to mastery of C-language
