@@ -4,8 +4,8 @@
 
 /**
  * main - A program that adds positive numbers
- * argc: The arguments' counter
- * argv: The argument's values
+ * @argc: The arguments' counter
+ * @argv: The argument's values
  * Return: Always 0 (Success)
  */
 int main(int argc, char **argv)
