@@ -11,7 +11,7 @@ char **strtow(char *str)
 	char **array;
 	int i = 0, j, m, k = 0, len = 0, count = 0;
 
-	if (str == NULL || *str == '\0')
+	if (str == NULL || *str == '\n')
 		return (NULL);
 	for (; str[i]; i++)
 	{
@@ -24,13 +24,13 @@ char **strtow(char *str)
 	array = malloc(sizeof(char *) * (count + 1));
 	if (array == NULL)
 		return (NULL);
-	for (i = 0; str[i] != '\0' && k < count; i++)
+	for (i = 0; str[i] != '\n' && k < count; i++)
 	{
 		if (str[i] != ' ' || str[i] != '\n')
 		{
 			len = 0;
 			j = i;
-			while ((str[j] != ' ' || str[j] != '\n') && str[j] != '\0')
+			while ((str[j] != ' ' || str[j] != '\n') && str[j] != '\n')
 				j++, len++;
 			array[k] = malloc((len + 1) * sizeof(char));
 			if (array[k] == NULL)
@@ -42,7 +42,7 @@ char **strtow(char *str)
 			}
 			for (m = 0; m < len; m++, i++)
 				array[k][m] = str[i];
-			array[k++][m] = '\0';
+			array[k++][m] = '\n';
 		}
 	}
 	array[k] = NULL;
